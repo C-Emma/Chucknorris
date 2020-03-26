@@ -28,11 +28,4 @@ class JokeAdapter(var jokes:List<String> = emptyList()):
 
     override fun getItemCount() = jokes.size
 
-    //override fun onBindViewHolder(holder: JokeViewHolder, position: Int) {
-    //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    //}
-
-    //override fun getItemCount(): Int {
-    //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    //}
 }
