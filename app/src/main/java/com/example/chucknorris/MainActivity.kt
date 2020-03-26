@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 private val LOGTAG = "Activity"
@@ -12,23 +13,28 @@ private val LOGTAG = "Activity"
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var adapter: JokeAdapter
+    private lateinit var layoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(LOGTAG, JokesList.jokes.toString())
 
-        viewManager = LinearLayoutManager(this)
-        viewAdapter = JokeAdapter(JokesList.jokes)
+        layoutManager = LinearLayoutManager(this)
+        id_recyclerView.layoutManager = layoutManager
+        //viewAdapter = JokeAdapter(JokesList.jokes)
 
-        recyclerView = findViewById<RecyclerView>(R.id.id_recyclerView).apply {
-            setHasFixedSize(true)
-            layoutManager = viewManager
-            adapter = viewAdapter
-        }
+        //Initialisation du recyclerView
+        adapter = JokeAdapter(JokesList.jokes)
+        id_recyclerView.adapter = adapter
+
+
+        //recyclerView = findViewById<RecyclerView>(R.id.id_recyclerView).apply {
+          //  setHasFixedSize(true)
+            //layoutManager = viewManager
+            //adapter = viewAdapter
+        //}
     }
 
 }

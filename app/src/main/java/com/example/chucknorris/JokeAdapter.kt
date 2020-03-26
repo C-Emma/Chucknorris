@@ -21,7 +21,7 @@ class JokeAdapter(var jokes:List<String> = emptyList()):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokeAdapter.JokeViewHolder {
         val textView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_main, parent, false) as TextView
+            .inflate(R.layout.jokes_view, parent, false) as TextView
         return JokeViewHolder(textView)
     }
 
